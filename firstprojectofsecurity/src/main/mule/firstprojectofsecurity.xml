@@ -13,17 +13,6 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 	<flow name="firstprojectofsecurityFlow" doc:id="4f49d69f-25da-4681-87bc-a2cc75e4ffab" >
 		<http:listener doc:name="Listener" doc:id="e53d66a6-d451-40c2-b192-dbcf2938d530" config-ref="HTTP_Listener_config" path="/project1"/>
 		<set-payload value="#['Payload created2khdsjfgeuhf']" doc:name="Set Payload" doc:id="39b6dc60-a7d5-451b-b29a-4e7498548a43" />
-		<ee:transform doc:name="Transform Message" doc:id="942c875a-74eb-4630-a42c-5698210bf3c6">
-			<ee:message>
-				<ee:set-payload><![CDATA[%dw 2.0
-output application/java
----
-{
-	a: "rajesh",
-	b: "kumar"
-}]]></ee:set-payload>
-			</ee:message>
-		</ee:transform>
 		<logger level="INFO" doc:name="Logger" doc:id="a83ddc21-c9a4-4927-8d23-fc7bcad8f080" message="#[payload]"/>
 	</flow>
 </mule>
